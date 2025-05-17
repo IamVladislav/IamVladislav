@@ -4,6 +4,10 @@ on:
   push:
     branches:
       - main
+    paths-ignore:
+      - 'russian-cv.tex'
+      - 'README.md'
+      - '.github/workflows/build-russian.yaml'
 
 jobs:
     build_latex:
