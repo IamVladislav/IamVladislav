@@ -1,0 +1,210 @@
+\documentclass[10pt, a4paper]{article} 
+
+\usepackage[T1]{fontenc}     % We are using pdfLaTeX,
+\usepackage[utf8]{inputenc}  % hence this preparation
+\usepackage[british, russian]{babel}  
+\usepackage[left = 0mm, right = 0mm, top = 0mm, bottom = 0mm]{geometry}
+\usepackage[stretch = 25, shrink = 25, tracking=true, letterspace=30]{microtype}  
+\usepackage{graphicx}        % To insert pictures
+\usepackage{xcolor}          % To add colour to the document
+\usepackage{marvosym}        % Provides icons for the contact details
+\usepackage{fontawesome5}
+
+\usepackage{enumitem}        % To redefine spacing in lists
+\setlist{parsep = 0pt, topsep = 0pt, partopsep = 1pt, itemsep = 1pt, leftmargin = 6mm}
+
+\usepackage{nimbussans}
+\renewcommand{\familydefault}{\sfdefault}
+
+\definecolor{cvblue}{HTML}{304263}
+
+%%%%%%% USER COMMAND DEFINITIONS %%%%%%%%%%%%%%%%%%%%%%%%%%%
+% These are the real workhorses of this template
+\newcommand{\dates}[1]{\hfill\mbox{\textbf{#1}}} % Bold stuff that doesn’t got broken into lines
+\newcommand{\is}{\par\vskip.3ex plus .4ex} % Item spacing
+\newcommand{\smaller}[1]{{\small$\diamond$\ #1}}
+\newcommand{\normal}[1]{{\normalsize$\diamond$\ #1}}
+\newcommand{\headleft}[1]{\vspace*{2ex}\textsc{\textbf{#1}}\par%
+	\vspace*{-1.5ex}\hrulefill\par\vspace*{0.7ex}}
+\newcommand{\headright}[1]{\vspace*{2.5ex}\textsc{\Large\color{cvblue}#1}\par%
+	\vspace*{-2ex}{\color{cvblue}\hrulefill}\par}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage[colorlinks = true, urlcolor = white, linkcolor = white]{hyperref}
+
+\begin{document}
+	
+	% Style definitions -- killing the unnecessary space and adding the skips explicitly
+	\setlength{\topskip}{0pt}
+	\setlength{\parindent}{0pt}
+	\setlength{\parskip}{0pt}
+	\setlength{\fboxsep}{0pt}
+	\pagestyle{empty}
+	\raggedbottom
+	
+	\begin{minipage}[t]{0.33\textwidth} %% Left column -- outer definition
+		%  Left column -- top dark rectangle
+		\colorbox{cvblue!90}{\color{white}  %% LEFT BOX
+			\kern0.09\textwidth\relax% Left margin provided explicitly
+			\begin{minipage}[t][297mm][t]{0.82\textwidth}
+				\raggedright
+				\vspace*{2ex} % Extra space after the picture
+				% Centering without extra vertical spacing
+				\null\hfill\includegraphics[height=0.85\textwidth]{test.jpeg}\hfill\null
+
+				
+				\vspace*{1.5ex}
+				
+				\Large  \textbf{Владислав Метель} \normalsize 
+				
+				\vspace*{1.5ex}
+				
+				Expert SDET | AWS Automation | Python | CI/CD Architect | LLM-Enhanced QA
+				
+				\headleft{Контакты}
+				
+				\begin{tabular}{ @{}c l }
+					\Letter\ & \href{mailto:metel.vlad@gmail.com?subject=Job Opportunity}{metel.vlad@gmail.com} \\
+					\faLinkedin\ & \href{https://www.linkedin.com/in/metelvladislav}{metelvladislav} \\
+					\faMobile*\ & \href{tel:+7 999 825 23 92}{\raisebox{0.2ex}{+}7 999 825 23 92} \\
+					\faGithub\ & \href{https://github.com/IamVladislav}{IamVladislav} \\
+				\end{tabular}
+				
+				\headleft{Языки}
+				Русский: \textbf{Родной} \\[2pt]
+				Английский: \textbf{Продвинутый (B2)} \\[2pt]
+				Испанский: \textbf{Начальный (A2)}
+				
+				
+				\headleft{Навыки}
+				\normal{Языки: \textbf{Python, TypeScript, Bash}} \\[1pt]
+				\normal{AWS Cloud: \textbf{CloudFormation, Lambda, DynamoDB, EC2, ECS, API Gateway, CloudFront, VPC}} \\[1pt]
+				\normal{ML/LLM: \textbf{AWS Bedrock (Anthropic Claude, AWS Nova), SageMaker/HuggingFace (Qwen), PyTorch, OpenCV}} \\[1pt]
+				\normal{CI/CD: \textbf{Bitbucket/Bamboo, GitHub/GithubActions}} \\[1pt]
+				\normal{Общее: \textbf{Docker, Docker Compose}} \\[1pt]
+				\normal{Тестирование: \textbf{PyTest, Mock Systems, Screenshot/CV testing, Selenium}}
+				
+								
+				\headleft{Сертификации/Pet-проекты}
+				\textbf{AWS Certified Solutions Architect – Associate} \\[1pt]
+				\textbf{\href{https://github.com/IamVladislav/pytest-mitmproxy-plugin}{MITMProxy plugin для pyTest}}
+			\end{minipage}%
+			\kern0.09\textwidth\relax%%Right margin provided explicitly to stretch the colourbox
+		}
+	\end{minipage}% Right column
+	\hskip2.5em% Left margin for the white area
+	\begin{minipage}[t]{0.56\textwidth}
+		
+		\setlength{\parskip}{0.5ex}% Adds spaces between paragraphs; use \\ to add new lines without this space. Shrink this amount to fit more data vertically
+		
+		\headright{Обо мне}		
+		SDET с более чем 7-летним опытом разработки масштабируемых систем автоматизации на базе AWS. Добился подтверждённых результатов в снижении затрат на тестирование более чем на 60\% благодаря динамическому отбору тестов, анализу с применением машинного обучения и созданию эффективной CI/CD-инфраструктуры. Увлечён внедрением облачных решений, LLM-моделей и практик DevOps для повышения качества программного обеспечения и ускорения процессов разработки. Опытный тимлид и наставник с сильными Python и Infrastructure as Code практиками.
+		
+		
+		\headright{Опыт работы}
+		
+		\textsc{Expert SDET} в \textit{Align Technology}  \dates{Март 2021 – Настоящее время}
+		
+		\textbf{Масштабируемая инфраструктура \& Облачная автоматизация}
+		\is
+		\smaller{Создал и поддерживал высокнагруженную систему выполнения тестов, построенную на базе AWS и использующую тысячи on-demand агентов для выполнения более 5 миллионов UI тестов в неделю}
+		\is
+		\smaller{Спроектировал алгоритм и систему распределения нагрузки по регионам в зависимости от доступности и цены на Spot-инстансы. После запуска системы ошибки, связанные с недоступностью машин, исчезли без увеличение итоговой стоимости}
+		\is
+		\smaller{Внедрил межрегиональную систему загрузки в Allure TestOps с автоскейлингом загрузочных агентов в зависимости от нагрузки Allure. Что позволило загружать результаты в течении выполнения тестов и более 70\% результатов успевали загрузиться в течении выполнения тестового прогона}
+		
+		\textbf{CI/CD Оптимизации \& DevOps}
+		\is
+		\smaller{Разработал и распространил собственный CI тулкит для 10 AQA команд, стандартизировал пайплайн и улучшил консистентность в автоматизации}
+		\is
+		\smaller{Разработал React-портал для менеджмента тестовых артефактов, включающий распределенное между регионами S3 хранилище, пайплайн подготовки артефактов на базе AWS Lambda и авторизацию с помощью AWS Cognito и AzureAD}
+		
+		\textbf{Умная автоматизация \& ML/LLM интеграции}
+		
+		\is
+		\smaller{Внедрил AI систему код ревью на базе AWS Bedrock и SageMaker и обеспечил сжатый контекст с помощью самописного экстрактора. Cистема предлагает анализ и исправления для изменений в течении нескольких минут после создания PR}
+	
+		\is
+		\smaller{Создал механизм отбора тестов на основе измененного кода, позволяющий запускать только относящиеся к изменению тесты и экономить около 30\% расходов ( порядка 300 тысяч \$ в год )}
+		
+		\is
+		\smaller{Ввел алгоритм оптимизации группировки тестов и динамические таймауты на основе времени прохождения тестов, значительно усокряющий выполнение тестов и снижающий затраты на 20\% ( порядка 100 тысяч \$ в год)}
+		
+		\is
+		\smaller{Разработал систему стабилизации тестов, которая динамически определяет необходимость перезапуска того или иного теста в зависимости от результата, что позволило улучшить общее количества успешных прогонов с 70\% до 99\%}
+		
+		\is
+		\smaller{Обучил и интегрировал нейронную сеть для сегментации и определения объектов на WebGL сцене с использованием PyTorch и openCV}
+		
+		\is
+		\smaller{Ввел подход с независимыми фикстурами и плагины для сбора результатов и логов, проводил обучение коллег, способствовал значительному увеличению количества тестов с 5 тысяч до 18\raisebox{0.2ex}+ тысяч}
+		
+		\textbf{Мок-система \& Виртуализация}
+
+		\is
+		\smaller{Создал мок-систему, основанную на AWS (Lambda, S3, DynamoDB, API Gateway, CloudFornt), Docker и Python (aiohttp, flask), что позволило увеличить число успешных прогонов с 40\% до 70\% и обеспечило доступ к мок-результатам без предварительной настройки окружения}
+		
+		\textbf{Лидерство}
+		
+		\is
+		\smaller{Управлял командой ( до 4 SDET ), отвечающей за направление разработки и улучшения внутренних систем}
+		
+		
+	\end{minipage}
+	
+	\newpage
+	\vspace*{2ex}
+	\hskip0.05\textwidth% Left margin for the white area
+	\begin{minipage}[t]{0.9\textwidth}
+		\setlength{\parskip}{0.5ex}% Adds spaces between paragraphs; use \\ to add new lines without this space. Shrink this amount to fit more data vertically
+		
+		\headright{Опыт работы}
+		
+		\textsc{QA Engineer} в \textit{VK ex. Mail.Ru Group}  \dates{Май 2018 – Март 2021}
+		
+		\textbf{Автоматизированное тестирование}
+		\is
+		\smaller{Разработал с 0 и внедрил фреймворк десктопной автоматизации, основанный на самописном драйвере для QT приложения}
+		\is
+		\smaller{Увеличил количество автоматизированных тестов со 100 до 1000}
+		\is
+		\smaller{Внедрил инструкции и фрейморк, позволивший разработчикам участвовать в автоматизации тестирования как части цикла разработки}
+		
+		\textbf{Инфраструктура}
+		\is
+		\smaller{Создал и поддерживал кроссплатформенное окружение для smoke-тестирования релиза на всех поддерживаемых приложением системах используя VMware}
+		\is
+		\smaller{Разработал ботов для отслеживания прогресса тестирования и назначения ответственных из членов команды}
+		
+		\textbf{Ручное тестирование \& Команда}
+		\is
+		\smaller{Активно участвовал на всех этапах цикла разработки начиная с идеи до релиза и поддержки продукта}
+		\is
+		\smaller{Занимался наставничеством начинающих коллег и ревью их результатов}
+		\is
+		\smaller{Продвигал унификацию тестовых инструментов для юнита, что привело к переходу на единый прокси  ( Charles ) и апи-клиент ( Postman ) и позволило инженерам переключаться между командами/задачами без необходимости в изучении новых инструментов}
+		\par{\color{cvblue}\hrulefill}\par
+		\textsc{Инженер} в \textit{Российская Академия Наук | РАН · Институт Кристаллографии}  \dates{Февраль 2017 – Апрель 2019}
+		
+		\textbf{Разработка}
+		\is
+		\smaller{Разработал C\raisebox{0.2ex}+\raisebox{0.2ex}+ проект для расчета дифракционной картины в деформированных кристаллах}
+		\is
+		\smaller{Использовал кластер для параллелизации вычислений, что позволило сократить время получения результата с нескольких дней до нескольких часов}
+		
+		\headright{Образование}
+		\vspace*{1ex}
+		\textbf{Магистр Прикладной математики и информатики} \\[1pt]
+		\vspace*{1ex} %Why?
+		\small
+		Национальный исследовательский ядерный университет МИФИ, 2017–2019 \\[1pt]
+		\normalsize
+		\textbf{Бакалавр Прикладной математики и информатики} \\[1pt]
+		\small
+		Национальный исследовательский ядерный университет МИФИ, 2013–2017 \\[1pt]
+		\normalsize
+
+	\end{minipage}
+	
+	
+\end{document}
