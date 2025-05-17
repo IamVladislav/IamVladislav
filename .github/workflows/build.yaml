@@ -21,6 +21,13 @@ jobs:
             root_file: cv.tex
         - name: Upload PDF file
           uses: actions/upload-artifact@v4
+          id: artifact-upload-step
           with:
             name: PDF
             path: cv.pdf
+        - name: Update README
+          run: |
+            echo '### 📄 My Resume\n[Download PDF](${{ steps.artifact-upload-step.outputs.artifact-id }})' > README.md
+        - uses: stefanzweifel/git-auto-commit-action@v5
+          with:
+            commit_message: Update README
