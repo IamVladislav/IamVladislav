@@ -1,0 +1,31 @@
+name: build-pdf
+
+on:
+  workflow_dispatch:
+    inputs:
+      language:
+        description: "Resulted language"
+        required: true
+        default: 'EN'
+        type: choice
+        options:
+          - EN
+          - RU
+jobs:
+    build_latex:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Set up Git repository
+          uses: actions/checkout@v4
+
+        - name: Compile LaTeX document
+          uses: xu-cheng/latex-action@v3
+          with:
+            root_file: ${{ inputs.language }}-cv.tex
+
+        - name: Upload PDF file
+          uses: actions/upload-artifact@v4
+          id: artifact-upload-step
+          with:
+            name: PDF
+            path: ${{ inputs.language }}-cv.pdf
