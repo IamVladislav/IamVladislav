@@ -17,19 +17,36 @@ jobs:
       steps:
         - name: Set up Git repository
           uses: actions/checkout@v4
-        - name: Compile LaTeX document
-          uses: xu-cheng/latex-action@v3
+#        - name: Compile LaTeX document
+#          uses: xu-cheng/latex-action@v3
+#          with:
+#            root_file: cv.tex
+#        - name: Upload PDF file
+#          uses: actions/upload-artifact@v4
+#          id: artifact-upload-step
+#          with:
+#            name: PDF
+#            path: cv.pdf
+
+        - uses: actions/setup-python@v5
           with:
-            root_file: cv.tex
-        - name: Upload PDF file
-          uses: actions/upload-artifact@v4
-          id: artifact-upload-step
+            python-version: 3.13
+        - uses: abatilo/actions-poetry@v3
           with:
-            name: PDF
-            path: cv.pdf
-        - name: Update README
+            poetry-version: "latest"
+
+        - name: Install dependencies
+          run: | 
+            cd md-transformer
+            poetry install --no-root
+
+        - name: Run transformer
+          env:
+            GEMINI_TOKEN: ${{ secrets.GEMINI_TOKEN }}
           run: |
-            echo '### 📄 My Resume\n[Download PDF](${{ steps.artifact-upload-step.outputs.artifact-id }})' > README.md
+            cd md-transformer
+            poetry run python3 md-transformer.py
+
         - uses: stefanzweifel/git-auto-commit-action@v5
           with:
             commit_message: Update README

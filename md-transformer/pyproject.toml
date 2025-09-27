@@ -1,0 +1,18 @@
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[project]
+name = "md-tranaformer"
+description = "Use MITM Proxy in autotests with full control from code"
+version = "0.1.0"
+authors = [
+    { name = "Vladislav Metel", email = "metel.vlad@gmail.com" },
+]
+maintainers = [
+    { name = "Vladislav Metel", email = "metel.vlad@gmail.com" },
+]
+
+[tool.poetry.dependencies]
+python = ">= 3.11"
+google-genai = "^1.39.1"
