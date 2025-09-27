@@ -4,7 +4,7 @@ from pathlib import Path
 from google import genai
 from google.genai import types
 
-with Path('../cv.tex').open() as tex_cv_file:
+with Path('../EN-cv.tex').open() as tex_cv_file:
     tex_cv = tex_cv_file.read()
 
 client = genai.Client(api_key=os.environ["GEMINI_TOKEN"])
